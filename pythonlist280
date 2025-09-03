@@ -1,0 +1,256 @@
+# 1. Write a  Python program to sum all the items in a list.
+numbers = [1, 2, 3, 4, 5]
+total = sum(numbers)
+
+# 2. Write a  Python program to multiply all the items in a list.
+numbers = [1, 2, 3, 4, 5]
+result = 1
+for x in numbers:
+    result *= x
+
+# 3. Write a Python program to get the largest number from a list.
+numbers = [10, 25, 3, 99, 45]
+largest = max(numbers)
+
+# 4. Write a Python program to get the smallest number from a list.
+numbers = [10, 25, 3, 99, 45]
+smallest = min(numbers)
+
+# 5. Write a Python program to count the number of strings from a given list of  strings
+words = ['abc', 'xyz', 'aba', '1221']
+count = 0
+for w in words:
+    if len(w) >= 2 and w[0] == w[-1]:
+        count += 1
+# 6. Write a Python program to get a list, sorted in increasing order by the last
+tuples = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+sorted_tuples = sorted(tuples, key=lambda x: x[-1])
+
+# 7. Write a  Python program to remove duplicates from a list.
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_numbers = list(set(numbers))
+
+# 8. Write a  Python program to check if a list is empty or not.
+numbers = []
+is_empty = len(numbers) == 0
+
+# 9. Write a Python program to clone or copy a list.
+numbers = [1, 2, 3, 4]
+cloned_list = numbers.copy()
+
+# 10. Write a Python program to find the list of words that are longer than n from a
+words = ["apple", "dog", "banana", "hi"]
+n = 3
+long_words = [w for w in words if len(w) > n]
+
+# 11. Write a Python function that takes two lists and returns True if they have at
+list1 = [1, 2, 3, 4]
+list2 = [4, 5, 6, 7]
+common = False
+for x in list1:
+    if x in list2:
+        common = True
+        break
+# 12. Write a Python program to print a specified list after removing the 0th, 4th
+colors = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+result = [x for i, x in enumerate(colors) if i not in (0, 4, 5)]
+
+# 13. Write a  Python program to generate a 3*4*6 3D array whose each element is
+array_3d = [[['*' for _ in range(6)] for _ in range(4)] for _ in range(3)]
+
+# 14. Write a  Python program to print the numbers of a specified list after removing
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+odd_numbers = [x for x in numbers if x % 2 != 0]
+
+# 15. Write a Python program to shuffle and print a specified list.
+import random
+numbers = [1, 2, 3, 4, 5]
+random.shuffle(numbers)
+
+# 16. Write a Python program to generate and print a list of the first and last 5
+squares = [x**2 for x in range(1, 31)]
+result = squares[:5] + squares[-5:]
+
+# 17. Write a Python program to check if each number is prime in a given list of
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+numbers = [3, 5, 7, 13]
+all_primes = all(is_prime(x) for x in numbers)
+
+# 18. Write a  Python program to generate all permutations of a list in  Python.
+from itertools import permutations
+nums = [1, 2, 3]
+all_perms = list(permutations(nums))
+
+# 19. Write a Python program to calculate the difference between the two lists.
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+diff1 = [x for x in list1 if x not in list2]
+diff2 = [x for x in list2 if x not in list1]
+
+# 20. Write a Python program to access the index of a list.
+numbers = [10, 20, 30, 40]
+indexes = list(enumerate(numbers))
+
+# 21. Write a Python program to convert a list of characters into a string.
+chars = ['h', 'e', 'l', 'l', 'o']
+string = ''.join(chars)
+
+# 22. Write a Python program to find the index of an item in a specified list.
+numbers = [10, 20, 30, 40, 50]
+index_30 = numbers.index(30)
+
+#23. Write a Python program to flatten a shallow list.
+shallow_list = [[1, 2], [3, 4], [5, 6]]
+flat_list = [item for sublist in shallow_list for item in sublist]
+
+# 24. Write a Python program to append a list to the second list.
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list1.extend(list2)
+
+# 25. Write a Python program to select an item randomly from a list.
+import random
+numbers = [10, 20, 30, 40, 50]
+random_item = random.choice(numbers)
+
+# 26. Write a  Python program to check whether two lists are circularly identical.
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 1, 2]
+circular_identical = any(list1 == list2[i:] + list2[:i] for i in range(len(list2)))
+
+# 27. Write a  Python program to find the second smallest number in a list.
+numbers = [5, 1, 7, 3, 9]
+second_smallest = sorted(set(numbers))[1]
+
+# 28. Write a Python program to find the second largest number in a list.
+numbers = [5, 1, 7, 3, 9]
+second_largest = sorted(set(numbers))[-2]
+
+# 29. Write a Python program to get unique values from a list.
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_values = list(set(numbers))
+
+# 30. Write a Python program to get the frequency of elements in a list.
+numbers = [1,2,2,3,3,3,4]
+frequency = {}
+for x in numbers:
+    frequency[x] = frequency.get(x, 0)+1
+
+# 31. Write a Python program to count the number of elements in a list within a
+numbers = [10, 20, 30, 40, 50, 60]
+low, high = 20, 50
+count = sum(1 for x in numbers if low <= x <= high)
+
+# 32. Write a Python program to check whether a list contains a sublist.
+main_list = [1, 2, 3, 4, 5]
+sublist = [2, 3]
+contains_sublist = any(main_list[i:i+len(sublist)] == sublist for i in range(len(main_list)-len(sublist)+1))
+
+# 33. Write a  Python program to generate all sublists of a list.
+nums = [1, 2, 3]
+sublists = [[]]
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)+1):
+        sublists.append(nums[i:j])
+
+# 34. Write a  Python program that uses the Sieve of Eratosthenes method to
+n = 30
+sieve = [True] * (n+1)
+sieve[0] = sieve[1] = False
+for i in range(2, int(n**0.5)+1):
+    if sieve[i]:
+        for j in range(i*i, n+1, i):
+            sieve[j] = False
+primes = [i for i, val in enumerate(sieve) if val]
+
+# 35. Write a Python program to create a list by concatenating a given list with a
+lst = ['p', 'q']
+n = 5
+result = [x+str(i) for i in range(1, n+1) for x in lst]
+
+# 36. Write a  Python program to get a variable with an identification number or
+x = 123
+id_number = id(x)
+
+# 37. Write a  Python program to find common items in two lists.
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common_items = list(set(list1) & set(list2))
+
+# 38. Write a Python program to change the position of every n-th value to the
+lst = [0, 1, 2, 3, 4, 5]
+for i in range(0, len(lst)-1, 2):
+    lst[i], lst[i+1] = lst[i+1], lst[i]
+# 39. Write a Python program to convert a list of multiple integers into a single
+lst = [11, 33, 50]
+single_int = int(''.join(map(str, lst)))
+
+# 40. Write a Python program to split a list based on the first character of a word.
+words = ["apple", "banana", "apricot", "cherry", "blueberry"]
+split_dict = {}
+for word in words:
+    key = word[0]
+    split_dict.setdefault(key, []).append(word)
+
+# 41. Write a  Python program to create multiple lists.
+list1, list2, list3 = [], [], []
+
+# 42. Write a Python program to find missing and additional values in two lists.
+list1 = ['a', 'b', 'c', 'd', 'e', 'f']
+list2 = ['a', 'b', 'c', 'g', 'h']
+missing = [x for x in list1 if x not in list2]
+additional = [x for x in list2 if x not in list1]
+
+# 43. Write a  Python program to split a list into different variables.
+l9st = [1, 2, 3]
+a, b, c = lst
+
+# 44. Write a Python program to generate groups of five consecutive numbers in a
+groups = [[i, i + 1, i + 2, i + 3, i + 4] for i in range(1, 21, 5)]
+
+# 45. Write a Python program to convert a pair of values into a sorted unique array.
+pairs = [(1, 2), (3, 4), (2, 1)]
+unique_sorted = sorted(set([item for pair in pairs for item in pair]))
+
+# 46. Write a Python program to select the odd items from a list.
+lst = [10, 11, 12, 13, 14, 15]
+odd_items = [x for x in lst if x % 2 != 0]
+
+# 47. Write a Python program to insert an element before each element of a list.
+lst = [1, 2, 3]
+element = 0
+new_lst = []
+for x in lst:
+    new_lst.append(element)
+    new_lst.append(x)
+
+# 48. Write a  Python program to print nested lists (each list on a new line) using
+nested_list = [[1, 2], [3, 4], [5, 6]]
+for sub in nested_list:
+    print(sub)
+
+# 49. Write a Python program to convert a list to a list of dictionaries.
+colors = ["Black", "Red", "Maroon", "Yellow"]
+codes = ["#000000", "#FF0000", "#800000", "#FFFF00"]
+list_of_dicts = [{"color_name": c, "color_code": code} for c, code in zip(colors, codes)]
+
+# 50. Write a  Python program to sort a list of nested dictionaries.
+nested_dicts = [{"name": "John", "age": 25}, {"name": "Jane", "age": 20}, {"name": "Doe", "age": 30}]
+sorted_dicts = sorted(nested_dicts, key=lambda x: x["age"])
+
+# 51. Write a Python program to split a list every Nth element.
+lst = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+n = 3
+split_lists = [lst[i::n] for i in range(n)]
+
+# 52. Write a  Python program to compute the difference between two lists.
+color1 = ["red", "orange", "green", "blue", "white"]
+color2 = ["black", "yellow", "green", "blue"]
+diff1 = [x for x in color1 if x not in color2]
+diff2 = [x for x in color2 if x not in color1]
