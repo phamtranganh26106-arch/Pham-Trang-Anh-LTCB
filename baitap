@@ -1,0 +1,77 @@
+# 1.Write a Python function to find the maximum of three numbers.
+def max_of_three(a, b, c):
+    return max(a, b, c)
+
+print(max_of_three(3, 7, 5))
+
+# 2.Write a Python function to sum all the numbers in a list.
+def sum_list(numbers):
+    return sum(numbers)
+
+print(sum_list([1, 2, 3, 4, 5]))
+
+# 3.Write a Python program to reverse a string.
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("hello"))
+
+# 4.Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+# 5.Write a Python function that takes a number as a parameter and checks whether the number is prime or not.
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+print(is_prime(7))
+print(is_prime(10))
+
+# 6.Write a Python function to print
+# 6.1.
+def primes_less_than(n):
+    return [i for i in range(2, n) if is_prime(i)]
+
+print(primes_less_than(20))
+
+# 6.2.
+def first_n_primes(n):
+    primes = []
+    num = 2
+    while len(primes) < n:
+        if is_prime(num):
+            primes.append(num)
+        num += 1
+    return primes
+
+print(first_n_primes(10))
+
+
+# 7.Write a Python function to check whether a number is "Perfect" or not. Then print all perfect number that less than 1000.
+def is_perfect(n):
+    divisors = [i for i in range(1, n) if n % i == 0]
+    return sum(divisors) == n
+
+print(is_perfect(6))
+print(is_perfect(28))
+for i in range(1, 1000):
+    if is_perfect(i):
+        print(i)
+
+# 8.Write a Python function to check whether a string is a pangram or not.
+import string
+
+def is_pangram(s):
+    alphabet = set(string.ascii_lowercase)
+    return alphabet <= set(s.lower())
+
+print(is_pangram("The quick brown fox jumps over the lazy dog"))
+print(is_pangram("Hello World"))
