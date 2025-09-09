@@ -1,0 +1,109 @@
+# 1.Write python program:
+# a)Convert two lists into a dictionary
+
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+dict1 = dict(zip(keys, values))
+print("a) ", dict1)
+
+# b)Merge two Python dictionaries into one
+
+dict2 = {'x': 9, 'y': 10}
+merged = {**dict1, **dict2}
+print("b) ", merged)
+
+# c)Print the value of key ‘history’ from the below dict
+#    {‘id’:4, ’history’:’sample’, ’price’:73}
+
+d = {'id': 4, 'history': 'sample', 'price': 73}
+print("c) ", d['history'])
+
+# a)Initialize dictionary with default values
+
+employees = ['John', 'Alice', 'Bob']
+defaults = {"designation": 'Developer', "salary": 8000}
+init_dict = dict.fromkeys(employees, defaults)
+print("d) ", init_dict)
+
+# b)Create a dictionary by extracting the keys from a given dictionary
+
+sample_dict = {"a": 1, "b": 2, "c": 3, "d": 4}
+extract_keys = ['a', 'c']
+new_dict = {k: sample_dict[k] for k in extract_keys}
+print("e) ", new_dict)
+
+# c)Delete a list of keys from a dictionary
+
+sample_dict = {"name": "Kelly", "age": 25, "salary": 8000, "city": "New york"}
+keys_to_remove = ["name", "salary"]
+for k in keys_to_remove:
+    sample_dict.pop(k, None)
+print("f) ", sample_dict)
+
+# d)Check if a value exists in a dictionary
+
+sample_dict = {"a": 1, "b": 2, "c": 3}
+print("g) ", 2 in sample_dict.values())
+
+# e)Rename key of a dictionary
+
+sample_dict = {"name": "Kelly", "age": 25}
+sample_dict["first_name"] = sample_dict.pop("name")
+print("h) ", sample_dict)
+
+# f)Get the key of a minimum value from the following dictionary  {‘a’:4, ’b’:18, ’c’:73}
+
+my_dict = {'a': 4, 'b': 18, 'c': 73}
+min_key = min(my_dict, key=my_dict.get)
+print("i) ", min_key)
+
+# a)Change value of a key in a nested dictionary
+
+sample_dict = {
+    'emp1': {'name': 'John', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 500}
+}
+sample_dict['emp3']['salary'] = 8500
+print("j) ", sample_dict)
+
+#bai2
+def stats_text(text):
+    stats = {}
+    pos = 0  # vị trí bắt đầu
+
+    for ch in text:
+        if ch == ' ' or ch == '\n':   # bỏ qua khoảng trắng và xuống dòng
+            pos += 1
+            continue
+
+        if stats.get(ch) is None:
+            stats[ch] = {'count': 1, 'positions': [pos]}
+        else:
+            stats[ch]['count'] += 1
+            stats[ch]['positions'].append(pos)
+
+        pos += 1
+
+    # Sắp xếp theo ký tự
+    keys = sorted(stats.keys())
+    for key in keys:
+        print(f"Character '{key}' appears {stats[key]['count']} times, at positions {stats[key]['positions']}")
+
+#bai3
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def prime_dict(N):
+    primes = [i for i in range(2, N) if is_prime(i)]
+    d = {i+1: primes[:i+1] for i in range(len(primes))}
+    return d
+
+
+
+
